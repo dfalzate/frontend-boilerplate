@@ -1,7 +1,9 @@
 import React from 'react'
 
-function App() {
-  return <div>Diego Alzate</div>
+interface IApp {}
+
+const App: React.FC<IApp> = () => {
+  return <div>Diego Fernando Alzate</div>
 }
 
 export default App

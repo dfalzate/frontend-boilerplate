@@ -3,8 +3,8 @@
 const path = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const webpack = require('webpack')
-
-const server_port = process.env.PORT || 3000;
+const MiniCssExtractPlugin = require('mini-css-extract-plugin')
+const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 
 module.exports = {
   mode: 'development',
@@ -13,30 +13,11 @@ module.exports = {
   },
   output: {
     path: path.resolve(__dirname, 'dist'),
-    filename: 'js/[name].js',
-    publicPath: `http://127.0.0.1:${server_port}/`,
-    chunkFilename: 'js/[id].[chunkhash].js',
+    filename: 'js/bundle.[hash].js',
   },
-  devtool: "source-map",
+  devtool: 'source-map',
   resolve: {
       extensions: ['.ts', '.tsx', '.js', '.jsx', '.json']
-  },
-  devServer: {
-    contentBase: path.resolve(__dirname, 'dist'),
-    host: '0.0.0.0',
-    port: server_port,
-    hot: true,
-    watchOptions: {
-      aggregateTimeout: 300,
-      poll: 1000
-    },
-    headers: {
-      "Access-Control-Allow-Origin": "*",
-      "Access-Control-Allow-Methods": "GET, POST, PUT, DELETE, PATCH, OPTIONS",
-      "Access-Control-Allow-Headers": "X-Requested-With, content-type, Authorization"
-    },
-    open: true,
-    historyApiFallback: true,
   },
   module: {
     rules: [
@@ -75,9 +56,14 @@ module.exports = {
     ]
   },
   plugins: [
+    new MiniCssExtractPlugin({
+      filename: 'css/[name].[hash].css',
+      chunkFilename: 'css/[id].[hash].css'
+    }),
     new webpack.HotModuleReplacementPlugin(),
     new HtmlWebpackPlugin({
       template: path.resolve(__dirname, 'public/index.html')
-    }),   
+    }),  
+    new CleanWebpackPlugin()
   ],
 }

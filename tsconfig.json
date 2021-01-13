@@ -1,0 +1,13 @@
+{
+  "compilerOptions": {
+    "allowSyntheticDefaultImports": true,
+    "noImplicitAny": true,
+    "module":"commonjs",
+    "target": "esnext",
+    "jsx": "react",
+    "allowJs": true
+  },
+  "files": [
+    "src/index.tsx"
+  ]
+}

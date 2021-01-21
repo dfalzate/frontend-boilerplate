@@ -6,9 +6,11 @@ interface IApp {}
 
 const App: React.FC<IApp> = () => {
   return (
-    <div>
+    <div className='main'>
       <div>By Diego</div>
-      Your <FontAwesomeIcon icon={faCoffee} /> is hot and ready!
+      <div>
+        Your <FontAwesomeIcon icon={faCoffee} /> is hot and ready!
+      </div>
     </div>
   )
 }

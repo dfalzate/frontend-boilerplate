@@ -27,7 +27,6 @@ yarn build:dev
 ```
 
 Características
-TypeScript
-SASS
-Linter
-FontAwesome
+TypeScript, SASS, Linter, FontAwesomeIcon
+
+By Diego

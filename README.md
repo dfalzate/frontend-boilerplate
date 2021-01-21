@@ -1,6 +1,7 @@
-# 🚀 Welcome to your new awesome project!
+# 🚀 Welcome to my webpack boilerplate!
 
-This project has been created using **webpack scaffold**, you can now run
+Production
+to bundle your application
 
 ```
 npm run build
@@ -12,4 +13,21 @@ or
 yarn build
 ```
 
-to bundle your application
+Development
+Run development mode
+
+```
+npm run build:dev
+```
+
+or
+
+```
+yarn build:dev
+```
+
+Características
+TypeScript
+SASS
+Linter
+FontAwesome

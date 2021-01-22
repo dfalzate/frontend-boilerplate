@@ -9,7 +9,7 @@ const App: React.FC<IApp> = () => {
     <div className='main'>
       <div>By Diego</div>
       <div>
-        Your <FontAwesomeIcon icon={faCoffee} /> is hot and ready!
+        Your <FontAwesomeIcon icon={faCoffee} className='faCoffee' /> is hot and ready!
       </div>
     </div>
   )

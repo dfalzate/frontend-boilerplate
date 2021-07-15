@@ -6,9 +6,6 @@ interface IApp {}
 
 const App: React.FC<IApp> = () => {
 
-  const nombre = 'Diego Alzate'
-  console.log(nombre)
-
   return (
     <div className='main'>
       <div className='title'><h1>By Diego Alzate</h1></div>
